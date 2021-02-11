@@ -1,0 +1,204 @@
+Country,EOR_Method,Porosity,Permeability,Depth,Gravity,Viscocity,Temperature,Oil_Saturation,Project_Eval ,Profit
+USA,Polymer,14,40,4800,34,2.63,102,50,succ,No
+Norway,Steam Injection,31,205,1200,19,32,105,57,Disc.,No
+USA,CO2 Injection,23,30,2680,40,1,82,60,Disc.,No
+USA,CO2 Injection,16,20,4500,41,1.1,97,35,Disc.,good
+USA,CO2 Injection,18,2,5400,42,0.4,104,39,Disc.,good
+USA,CO2 Injection,7,2,8200,33,1.2,120,50,Disc.,No
+USA,CO2 Injection,10,3,4900,34,2.3,98,35,Disc.,No
+Canada,HC injection,9.1,50,6400,43,0.39,195,67,Disc.,good
+Canada,HC injection,8,50,6330,44,0.4,195,67,Disc.,good
+USA,Steam Injection,60,3,1500,30,40,110,45,Prom,good
+USA,Steam Injection,33,4000,1200,13,2800,110,50,Prom,Prom
+USA,Steam Injection,65,1,800,14,3000,90,65,Prom,Prom
+USA,Steam Injection,22,100,800,20,20,54,85,Prom,Prom
+USA,Steam Injection,40.3,3048,175,12.7,2200,75,55,Prom,good
+USA,Steam Injection,39.2,955,300,13.9,1000,80,48,Prom,good
+Canada,Steam Injection,32,2000,1395,10,200000,55,70,Prom,good
+Germany,Steam Injection,30,10000,2700,25,175,100,70,Prom,good
+Germany,Steam Injection,30,10000,2600,25,175,100,7,Prom,good
+Germany,Steam Injection,30,10000,2600,25,175,100,70,Prom,good
+Norway,Steam Injection,31,95,1400,17,175,110,58,Prom,No
+Norway,Steam Injection,29,265,2100,17,200,110,75,Prom,good
+USA,CO2 Injection,27,1000,5700,31,1.24,165,30,Prom,good
+Canada,CO2 Injection,15,10,4655,28,3,140,45,Prom,good
+USA,CO2 Injection,14,50,9400,38,1,82,45,Prom,good
+USA,CO2 Injection,10,2,4950,32,2,105,55,Prom,good
+USA,CO2 Injection,12,5,5700,42,0.6,129,60,Prom,good
+USA,CO2 Injection,10,6,5400,33,2,108,60,Prom,Prom
+USA,CO2 Injection,16,37,2600,36,1.6,83,60,Prom,good
+USA,CO2 Injection,11.6,4,4500,40,1,101,60,Prom,good
+USA,CO2 Injection,13,30,1150,35,0.6,99,32,Prom,good
+USA,CO2 Injection,23,300,4850,22,17,152,37,Prom,good
+Canada,CO2 Injection,16.3,7.5,4600,30,3,149,45,Prom,good
+Canada,HC injection,8.5,300,5500,39,0.46,190,45,Prom,good
+USA,Combustion,17,10,8800,33,1.44,200,85,Prom,good
+USA,Combustion,17,10,8300,33,1.44,200,83,Prom,good
+USA,Polymer,10,16,9000,30,2,200,32,Prom,good
+USA,Steam Injection,32,2000,1300,13,8000,95,60,succ,good
+USA,Steam Injection,34,1000,800,10,25000,84,55,succ,good
+USA,Steam Injection,36,2000,1000,14,2000,105,65,succ,good
+USA,Steam Injection,40,2000,200,13,3500,82,60,succ,good
+USA,Steam Injection,36,2000,600,12,45000,83,60,succ,good
+USA,Steam Injection,30,3000,1300,12,3000,100,70,succ,good
+USA,Steam Injection,30,3000,1300,13,4000,100,70,succ,good
+USA,Steam Injection,30,4500,1300,13,4000,90,60,succ,good
+USA,Steam Injection,30,3000,1100,11,10000,130,75,succ,good
+USA,Steam Injection,30,300,1100,13,3500,104,65,succ,good
+USA,Steam Injection,65,5,1000,12.5,1000,90,75,succ,good
+USA,Steam Injection,31,5000,1000,14,6000,90,60,succ,good
+USA,Steam Injection,34.5,2000,2300,12,1000,130,55,succ,good
+USA,Steam Injection,32.5,2260,2100,11,3000,125,55,succ,good
+USA,Steam Injection,30,3500,800,10,10000,90,60,succ,good
+USA,Steam Injection,30,3000,1300,14,4000,85,70,succ,good
+USA,Steam Injection,30,2000,1000,13,8000,80,70,succ,good
+USA,Steam Injection,27,1500,1800,13,10000,90,60,succ,good
+USA,Steam Injection,58,5,1500,13,2000,100,50,succ,good
+USA,Steam Injection,34.8,2700,1200,12,5200,100,53,succ,good
+USA,Steam Injection,30,3000,1500,12,4000,100,60,succ,good
+USA,Steam Injection,31,1300,1500,11,5000,100,50,succ,good
+USA,Steam Injection,30,2250,1500,12,5000,100,60,succ,good
+USA,Steam Injection,34,1510,1640,14,3720,100,44,succ,good
+USA,Steam Injection,32,2000,1000,13,4000,90,50,succ,good
+USA,Steam Injection,34,6700,1900,12,1200,135,46,succ,good
+USA,Steam Injection,38,2000,1250,13,450,95,85,succ,good
+USA,Steam Injection,30,2800,1000,14,2000,90,50,succ,good
+USA,Steam Injection,30,2000,1800,14.8,1525,95,45,succ,good
+USA,Steam Injection,32,1500,1200,14,1400,80,50,succ,good
+USA,Steam Injection,34,1300,1300,16,345,1000,80,succ,good
+USA,Steam Injection,37,8000,1500,12,3000,100,65,succ,Prom
+USA,Steam Injection,30,1000,2000,13,3000,80,70,succ,good
+USA,Steam Injection,31,1000,2300,13,300,125,58,succ,Prom
+Canada,Steam Injection,32.5,4000,1480,13,13000,66,90,succ,good
+Canada,Steam Injection,32,3500,1600,12,200000,60,60,succ,good
+Canada,Steam Injection,33,7500,1640,12,25000,70,85,succ,good
+Canada,Steam Injection,35,1500,1509,10.2,100000,55,70,succ,good
+Canada,Steam Injection,26.5,3000,1800,8,300000,63,0.8,succ,Prom
+Canada,Steam Injection,28.5,1500,1800,8,100000,62,80,succ,good
+Brazil,Steam Injection,27,3000,2300,13,825,124,76,succ,good
+Brazil,Steam Injection,25,4000,1150,15,1700,100,70,succ,good
+Brazil,Steam Injection,25,3000,1480,15,2500,100,70,succ,good
+Brazil,Steam Injection,22,200,2460,21,500,122,70,succ,good
+Egypt,Steam Injection,25,20,1500,10,72,110,80,succ,good
+Germany,Steam Injection,30,10000,2700,25,175,100,50,succ,good
+Germany,Steam Injection,30,10000,2700,25,175,100,70,succ,good
+Germany,Steam Injection,30,10000,2700,25,175,100,80,succ,good
+Germany,Steam Injection,30,10000,2700,25,175,100,70,succ,good
+Germany,Steam Injection,34,2000,4000,22,350,100,62,succ,good
+Germany,Steam Injection,38,1600,350,22,350,100,60,succ,good
+Norway,Steam Injection,30,500,1100,11,5500,104,75,succ,good
+USA,Steam Injection,4,19,6700,39,1,135,78,succ,good
+USA,CO2 Injection,17,75,4950,38,2,117,70,succ,good
+USA,CO2 Injection,12,32,4100,35,1,95,80,succ,good
+USA,CO2 Injection,9.9,31,5000,35,1,178,49,succ,good
+USA,CO2 Injection,10.3,4,5400,35,1,181,50,succ,good
+USA,CO2 Injection,7,10,7000,35,1,163,50,succ,good
+USA,CO2 Injection,10,20,6000,35,1,170,46,succ,good
+USA,CO2 Injection,10,5,6400,35,1,148,40,succ,good
+USA,CO2 Injection,13,44,9400,38,1,150,55,succ,good
+USA,CO2 Injection,7,4,5800,30,3,109,49,succ,good
+USA,CO2 Injection,14,5,4800,32,2.3,102,40,succ,good
+USA,CO2 Injection,13,6,6800,40,0.7,130,38,succ,good
+USA,CO2 Injection,10,3,5400,40,3,101,43,succ,good
+USA,CO2 Injection,12,2,4900,34,1.4,108,89,succ,good
+USA,CO2 Injection,22,5,5300,44,0.4,104,40,succ,good
+USA,CO2 Injection,10,42,4200,34,1.5,91,48,succ,No
+USA,CO2 Injection,22,5,7500,40,0.5,123,38,succ,good
+USA,CO2 Injection,15,15,4200,35,0.9,102,47,succ,good
+USA,CO2 Injection,21,4,5200,43,0.6,104,47,succ,good
+USA,CO2 Injection,20,12,6300,39,1,125,47,succ,good
+USA,CO2 Injection,10,70,6600,43,0.4,125,40,succ,good
+USA,CO2 Injection,10,5,4950,31,1.8,105,47,succ,good
+USA,CO2 Injection,10,2,4900,31,1.8,105,42,succ,good
+USA,CO2 Injection,12,8,4950,31,1.8,105,70,succ,good
+USA,CO2 Injection,10,4,5000,31,1.6,108,50,succ,good
+USA,CO2 Injection,11,4,5040,34,1.5,105,75,succ,good
+USA,CO2 Injection,12,5,4950,31,1.8,105,51,succ,good
+USA,CO2 Injection,10,4,5000,31,1.6,108,49,succ,good
+USA,CO2 Injection,9,4,4900,32,2,105,56,succ,good
+USA,CO2 Injection,11,4,4900,34,2.3,98,30,succ,good
+USA,CO2 Injection,7,2,7850,28,1.9,134,65,succ,good
+USA,CO2 Injection,11,8,5250,34,1.2,105,80,succ,good
+USA,CO2 Injection,12,8,5200,33,1.2,105,80,succ,good
+USA,CO2 Injection,10,5,5100,34,1.3,110,43,succ,good
+USA,CO2 Injection,9,2,5100,32,1.2,105,80,succ,good
+USA,CO2 Injection,10,2,4850,32,1.4,108,26.5,succ,good
+USA,CO2 Injection,14,5,5600,41,0.6,125,60,succ,good
+USA,CO2 Injection,18.1,48,6500,44,2,142,60,succ,good
+USA,CO2 Injection,9.2,100,9800,43.5,1,151,60,succ,good
+USA,CO2 Injection,22,2,5100,33,1,106,60,succ,good
+USA,CO2 Injection,8.6,6,5000,33,1,110,54.4,succ,good
+USA,CO2 Injection,17,250,5050,22,17,152,42,succ,good
+USA,CO2 Injection,27,107,8500,11,17,198,86,succ,good
+USA,CO2 Injection,27,500,5000,34,17,164,30,succ,good
+USA,CO2 Injection,28,600,5050,22.8,17.4,152,60,succ,good
+USA,CO2 Injection,0.28,1800,5000,22.8,17.4,152,60,succ,good
+USA,CO2 Injection,30,1000,5000,22.8,8,82,75,succ,good
+USA,CO2 Injection,17,175,1400,30,6,82,75,succ,good
+Canada,CO2 Injection,13,500,4900,42,1.14,133,38,succ,good
+Brazil,CO2 Injection,22,112,1970,35,10.5,120,50,succ,good
+USA,HC injection,22,400,8800,27,0.9,210,50,succ,good
+USA,HC injection,19,130,8800,26,1,235,45,succ,good
+USA,HC injection,20,50,6700,24,2,150,80,succ,Prom
+USA,HC injection,20,100,6600,25,2,160,80,Prom,Prom
+USA,HC injection,23,200,8800,27,0.9,182,70,Prom,Prom
+USA,HC injection,26,1300,10000,38,0.5,180,70,Prom,good
+USA,HC injection,20,4000,8700,27,1,220,75,Prom,good
+USA,HC injection,20,40,7000,22,4,170,75,Prom,good
+Canada,HC injection,15,200,9150,41,0.3,230,55,Prom,good
+Canada,HC injection,8.5,54,8300,41,0.4,225,30,Prom,good
+Canada,HC injection,8.6,300,5500,39,0.47,184,92,Prom,good
+Canada,HC injection,6,40,6200,40,0.3,183,52,Prom,good
+Canada,HC injection,8,300,6000,38,0.83,188,52,Prom,good
+Canada,HC injection,6,1000,6000,48,0.25,180,50,Prom,good
+Canada,HC injection,8,900,9541,43.2,0.33,204,80,Prom,good
+Canada,HC injection,12.7,2020,9469,43.6,0.37,198,82,Prom,good
+Canada,HC injection,10.5,1060,9415,40.9,0.42,199,88,Prom,good
+Canada,HC injection,9,540,9333,41.1,0.14,198,93,Prom,good
+Canada,HC injection,11.8,3100,9332,43.4,0.32,190,84,Prom,good
+Canada,HC injection,10.3,2400,9531,45.4,0.36,200,87,Prom,good
+Canada,HC injection,9.8,1970,9421,41.3,0.42,196,91,Prom,good
+Canada,HC injection,10.5,1375,6500,38,0.54,167,93,Prom,good
+Canada,HC injection,7.3,180,4160,37,0.59,188,90,Prom,good
+Canada,HC injection,8.6,320,4330,40,0.69,188,88,Prom,good
+Canada,HC injection,4.25,160,4040,38,0.55,190,73.5,Prom,good
+USA,Combustion,32,650,400,19,660,129.8,94,Prom,good
+USA,Combustion,17,15,9500,38,2,230,52,Prom,good
+USA,Combustion,17,10,9500,33,2,215,50,Prom,good
+USA,Combustion,17,10,9200,33,2,220,50,succ,good
+USA,Combustion,18,10,9000,33,2,215,55,succ,good
+USA,Combustion,17,10,9000,33,2,215,55,succ,good
+USA,Combustion,20,10,8450,31,2,215,55,succ,good
+USA,Combustion,20,10,8450,32,2,215,55,succ,good
+USA,Combustion,20,10,8450,31,2,215,55,succ,good
+USA,Combustion,17,10,8800,33,1.44,200,75,succ,good
+Venezuela,Combustion,20,6600,2650,9.3,376,131,88,succ,good
+USA,Polymer,17,25,1750,39,0.6,105,32,succ,good
+USA,Polymer,18,30,2200,39,0.6,112,32,succ,good
+USA,Polymer,18,75,1900,37,0.6,105,39,succ,good
+USA,Polymer,17,30,1600,35,0.6,99,32,succ,good
+USA,Polymer,16.8,20,2900,39,3,122,53,succ,Prom
+Canada,Polymer,29,3000,1500,13,3000,60,70,succ,good
+Canada,Polymer,303,7000,1200,15,5000,63,75,succ,good
+USA,Steam Injection,30,1500,1700,13,8000,80,60,succ,Prom
+USA,Steam Injection,65,1,1100,14,4000,70,60,Disc.,Prom
+USA,Steam Injection,30,800,1400,14,4000,75,65,Disc.,Prom
+USA,Steam Injection,37,3500,500,19,1200,110,65,Disc.,Good
+USA,Steam Injection,22,100,1000,16,20,54,85,Disc.,Good
+USA,Steam Injection,22,500,250,17.6,2900,55,60,Disc.,Good
+USA,Steam Injection,34,1500,450,11,20000,80,85,Disc.,Good
+Canada,Steam Injection,33,2000,1350,20,75000,60,70,Disc.,Prom
+Brazil,Steam Injection,25,4000,1150,15,1700,100,70,Disc.,Good
+Germany,Steam Injection,30,10000,2600,25,175,100,50,Disc.,good
+Norway,Steam Injection,36,750,1100,18,5000,97,80,Disc.,Good
+USA,CO2 Injection,12,10,5000,34,0.9,102,60,Disc.,No
+USA,CO2 Injection,16,32,4200,35,1,105,60,succ,Prom
+Canada,CO2 Injection,12,50,8200,41.5,0.65,206,60,succ,Prom
+Canada,CO2 Injection,16,20,5300,41,1,128,60,succ,Prom
+Brazil,CO2 Injection,20,112,5900,36,2,183,50,succ,good
+Brazil,CO2 Injection,20,112,4000,39.4,1.2,156,50,succ,good
+USA,HC injection,25,150,4500,18,100,85,65,succ,No
+USA,HC injection,25,150,4900,20,100,100,65,succ,No
+Canada,Steam Injection,33,7000,1600,10,500000,55,85,succ,No
+Canada,Steam Injection,33,7000,4226.6,26.9,8837.3,129.8,60,succ,No
+Canada,CO2 Injection,8.5,54,8300,41,0.4,225,30,succ,No
