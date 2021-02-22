@@ -13,10 +13,10 @@ st.set_page_config(page_title="EOR_Ml App", layout="wide")
 
 # Insert image
 image = Image.open("dt.png")
-st.image(image, width=700)
+st.image(image, width=100, use_column_width=True)
 
 # Write title and additional information
-st.title("Data Science for Oil and Gas Engineering")
+st.title("Data Science for Oil and Gas Engineering", )
 st.markdown("""
 This App consists of implementing an **EOR Screening** by using Machine Learning 
 algorithms. It must be mentioned that the dataset used for training and evaluating 
@@ -34,8 +34,49 @@ combustion in situ method.
 
 # Sidebar - collects user input features into dataframe
 with st.sidebar.header("1. Upload the csv data"):
-    upload_file = st.sidebar.file_uploader("Uploado your csv file", type=["csv"])
+    upload_file = st.sidebar.file_uploader("Upload your csv file", type=["csv"])
     st.sidebar.markdown("""
     [Download csv file](https://raw.githubusercontent.com/FreddyEcu-Ch/Machine-Learning/main/DATA%20WORLWIDE%20EOR%20PROJECTSP.csv)
     """)
 
+# Sidebar - ML Algorithms
+with st.sidebar.subheader("2. Select ML Alogrithm"):
+    algorithm = st.sidebar.selectbox("Select algorithm", ("KNN", "Decision Tree"))
+
+# Setting parameters
+with st.sidebar.subheader("3. Set User Input Parameters"):
+    split_size = st.sidebar.slider('Data split ratio (% for training set)', 10, 90, 80)
+
+with st.sidebar.subheader("3.1 Learning parameters"):
+    if algorithm == "KNN":
+        parameter_k_neighbors = st.sidebar.slider("Number of K neighbors", 1, 30, 2)
+
+    else:
+        parameter_decision_tree = st.sidebar.slider("Number of max depth", 1,10, 3)
+
+with st.sidebar.subheader("3.2 Reservoir Parameters"):
+    Porosity = st.sidebar.slider("Porosity (%)", 2, 30)
+    Permeability = st.sidebar.slider("Permeability (md)", 8, 5000)
+    Depth = st.sidebar.slider("Depth (ft)", 1000, 10000, 1200)
+    Gravity = st.sidebar.slider("API Gravity", 5, 40, 8)
+    Viscosity = st.sidebar.slider("Oil Viscosity (cp)", 10, 500000, 490058)
+    Temperature = st.sidebar.slider("Reservoir Temperature (F)", 50, 300)
+    Oil_saturation = st.sidebar.slider("Oil Saturation (%)", 10, 80, 35)
+
+# Exploratory Data Analysis (EDA)
+st.write('---')
+if st.button('Exploratory Data Analysis (EDA)'):
+    st.header('**Exploratory Data Analysis (EDA)**')
+    st.write('---')
+    if upload_file is not None:
+        @st.cache
+        def load_csv():
+            data = pd.read_csv(upload_file)
+            return data
+        df = load_csv()
+        report = ProfileReport(df, explorative=True)
+        st.markdown('**Input Dataframe**')
+        st.write(df)
+        st.write('---')
+        st.markdown('**Pandas Profiling Report**')
+        st_profile_report(report)
