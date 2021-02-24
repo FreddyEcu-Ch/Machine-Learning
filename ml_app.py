@@ -84,27 +84,33 @@ if st.button('Press to See the Exploratory Data Analysis (EDA)'):
         st.markdown('**Pandas Profiling Report**')
         st_profile_report(report)
 
-# Model Building
+# Calling data processing modules
 sc = MinMaxScaler()
 le = LabelEncoder()
 ohe = OneHotEncoder()
 
+# Model Building
+
 
 def model(dataframe):
+    # Calling the independent and dependent variables
     X = dataframe.iloc[:, 2:9]
     Y = dataframe.iloc[:, 1:2]
 
+    # Data details
     st.markdown('**1.2. Data Split**')
     st.write('Training set')
     st.info(X.shape)
     st.info(Y.shape)
 
+    # Variable information
     st.markdown('**1.3. Variable details**')
     st.write('Independent Variables')
     st.info(list(X.columns))
     st.write('Dependent Variable')
     st.info(list(Y.columns))
 
+    # data processing step
     X = sc.fit_transform(X)
     dfle = dataframe
     dfle.EOR_Method = le.fit_transform(dfle.EOR_Method)
@@ -114,6 +120,15 @@ def model(dataframe):
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=split_size,
                                                         random_state=0)
 
+    # Calling the information that will be used for model prediction
+    cnames = ['Porosity', 'Permiability', 'Depth', 'Gravity', 'Viscosity',
+              'Temperature', 'Oil_Saturation']
+    data = [[Porosity, Permeability, Depth, Gravity, Viscosity, Temperature,
+             Oil_saturation]]
+    my_X = pd.DataFrame(data=data, columns=cnames)
+    my_X = sc.transform(my_X)
+
+    # Calling the ML algorithms for training, plots, and prediction
     if algorithm == "K Nearest Neighbors(KNN)":
         Knn = KNeighborsClassifier(n_neighbors=parameter_k_neighbors)
         Knn.fit(X_train, Y_train)
@@ -133,6 +148,8 @@ def model(dataframe):
         plt.legend()
         plt.xlabel('K_neighbors')
         plt.ylabel('Accuracy')
+
+        prediction = Knn.predict(my_X)
 
     else:
         tree = DecisionTreeClassifier(max_depth=parameter_decision_tree)
@@ -154,6 +171,9 @@ def model(dataframe):
         plt.xlabel('max_depth_values')
         plt.ylabel('Accuracy')
 
+        prediction = tree.predict(my_X)
+
+    # Model performance information
     st.subheader("2. Model Performance")
     st.markdown('**2.1 Training set**')
     st.write('Accuracy of training set')
@@ -166,6 +186,21 @@ def model(dataframe):
     st.markdown('**2.3 Graphical Performance**')
     st.pyplot(plt)
 
+    # Model prediction information
+    st.write('---')
+    st.subheader('3. Model Prediction')
+    if np.argmax(prediction) == 0:
+        st.info('CO2 Injection')
+    elif np.argmax(prediction) == 1:
+        st.info('Combustion')
+    elif np.argmax(prediction) == 2:
+        st.info('HC Injection')
+    elif np.argmax(prediction) == 3:
+        st.info('Polymer')
+    elif np.argmax(prediction) == 4:
+        st.info('Steam Injection')
+
+# Model Deployment
 if upload_file is not None:
     st.subheader('1. Dataset')
     df = pd.read_csv(upload_file)
@@ -173,3 +208,4 @@ if upload_file is not None:
     st.markdown('**1.1 Showing dataset**')
     st.write(df)
     model(df)
+
