@@ -17,26 +17,34 @@ from sklearn.tree import DecisionTreeClassifier
 st.set_page_config(page_title="EOR_Ml App")
 
 # Insert image
-image = Image.open("dt.png")
-st.image(image, width=100, use_column_width=True)
+image = Image.open("dt_og.jpg")
+st.image(image, width=100, use_column_width=True, caption='Dassault Systemes. (2020, July). Oil & Gas Digital Transformation')
 
 # Write title and additional information
-st.title("Data Science for Oil and Gas Engineering", )
+st.title("Welcome to Data Science & ML for Oil and Gas Engineering")
 st.markdown("""
-This App consists of implementing an **EOR Screening** by using Machine Learning 
-algorithms. It must be mentioned that the dataset used for training and evaluating 
-these algorithms have a size of roughly 200 successful EOR Projects (Rows or 
-observations) from some countries, as well as 7 reservoir parameters, which are the 
-feature or dependent variables. Furthermore, the target variable of this model is a 
-categorical variable, which contains 5 EOR Methods (classes) such as the steam injection 
-method, CO2 injection method, HC injection method, polymer injection method, and 
-combustion in situ method.
+This App consists of implementing an **EOR Screening** for any well by using Machine 
+Learning algorithms. 
 
 * **By:** [Freddy Carrion](https://www.linkedin.com/in/freddy-carri%C3%B3n-maldonado-b3579b125/)
 
-* **Python Libraries:** scikit-learn, pandas, numpy, streamlit, matplotlib, 
-pandas_profiling
+* **Python Libraries:** scikit-learn, pandas, numpy, streamlit, matplotlib, folium,
+pillow, streamlit_folium, pandas_profiling, streamlit-pandas-profiling
 """)
+
+# Fill in information about the project implemented in this app
+expander_bar = st.beta_expander("About")
+expander_bar.markdown("This project consists of implementing an EOR Screening by using "
+                      "Machine Learning algorithms. It must be mentioned that the "
+                      "dataset used for training and evaluating these algorithms have a"
+                      "size of roughly 200 successful EOR Projects (Rows or "
+                      "observations) from some countries, as well as 7 reservoir "
+                      "parameters, which are the feature or dependent variables. "
+                      "Furthermore, the target variable of this model is a categorical "
+                      "variable, which contains 5 EOR Methods (classes) such as the "
+                      "steam injection method, CO2 injection method, HC injection "
+                      "method, polymer injection method, and combustion in situ "
+                      "method.")
 
 # Sidebar - collects user input features into dataframe
 with st.sidebar.header("1. Upload the csv data"):
@@ -51,17 +59,18 @@ with st.sidebar.subheader("2. Select ML Algorithm"):
                                                           "Decision Tree"))
 
 # Setting parameters
-with st.sidebar.subheader("3. Set User Input Parameters"):
+st.sidebar.subheader("3. Set User Input Parameters")
+with st.sidebar.subheader("3.1 Data Split"):
     split_size = st.sidebar.slider('Data split ratio (% for training set)', 10, 90, 80)
 
-with st.sidebar.subheader("3.1 Learning parameters"):
+with st.sidebar.subheader("3.2 Learning parameters"):
     if algorithm == "K Nearest Neighbors(KNN)":
         parameter_k_neighbors = st.sidebar.slider("Number of K neighbors", 1, 30, 2)
 
     else:
         parameter_decision_tree = st.sidebar.slider("Number of max depth", 1,10, 3)
 
-with st.sidebar.subheader("3.2 Reservoir Parameters"):
+with st.sidebar.subheader("3.3 Reservoir Parameters"):
     Porosity = st.sidebar.slider("Porosity (%)", 2, 30)
     Permeability = st.sidebar.slider("Permeability (md)", 8, 5000)
     Depth = st.sidebar.slider("Depth (ft)", 1000, 10000, 1200)
@@ -71,7 +80,6 @@ with st.sidebar.subheader("3.2 Reservoir Parameters"):
     Oil_saturation = st.sidebar.slider("Oil Saturation (%)", 10, 80, 35)
 
 # Exploratory Data Analysis (EDA)
-st.write('---')
 if st.button('Press to See the Exploratory Data Analysis (EDA)'):
     st.header('**Exploratory Data Analysis (EDA)**')
     st.write('---')
@@ -85,7 +93,7 @@ if st.button('Press to See the Exploratory Data Analysis (EDA)'):
         st.markdown('**Input Dataframe**')
         st.write(df)
         st.write('---')
-        st.markdown('**Pandas Profiling Report**')
+        st.markdown('**EDA Report**')
         st_profile_report(report)
 
     st.write('---')
@@ -225,6 +233,7 @@ def model(dataframe):
 
 
 if upload_file is not None:
+    st.write('---')
     st.subheader('1. Dataset')
     df = pd.read_csv(upload_file)
     df.rename(columns={'Viscocity':'Viscosity'}, inplace=True)
