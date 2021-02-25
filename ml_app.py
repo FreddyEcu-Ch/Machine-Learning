@@ -103,15 +103,13 @@ if st.button('Press to See the Exploratory Data Analysis (EDA)'):
     coordinates = {"Norway": ([64.5783, 17.8882], 5), "Canada": ([56.130366, -106.346771], 38),
                    "Usa": ([37.09024, -95.712891], 140), "Brazil": ([-23.533773, -46.625290], 8),
                    "Egypt": ([26.820553, 30.802498], 1), "Germany": ([51.5167, 9.9167], 10)}
-
-    with st.echo():
-        # Load the world map
-        m = folium.Map(zoom_start=14)
-        # Load the markers and popups
-        for country, point in coordinates.items():
-            folium.Marker(point[0], popup="<b>{}: </b> {} EOR Projects".
-                          format(country, point[1])).add_to(m)
-        folium_static(m)
+    # Load the world map
+    m = folium.Map(zoom_start=14)
+    # Load the markers and popups
+    for country, point in coordinates.items():
+        folium.Marker(point[0], popup="<b>{}: </b> {} EOR Projects".
+                              format(country, point[1])).add_to(m)
+    folium_static(m)
 
 # Calling data processing modules
 sc = MinMaxScaler()
