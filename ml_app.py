@@ -230,12 +230,12 @@ def model(dataframe):
 # Model Deployment
 
 
-if upload_file is not None:
-    st.write('---')
-    st.subheader('1. Dataset')
-    df = pd.read_csv(upload_file)
-    df.rename(columns={'Viscocity':'Viscosity'}, inplace=True)
-    st.markdown('**1.1 Showing dataset**')
-    st.write(df)
-    model(df)
-
+if st.button('Model Deployment'):
+    if upload_file is not None:
+        st.write('---')
+        st.subheader('1. Dataset')
+        df = pd.read_csv(upload_file)
+        df.rename(columns={'Viscocity':'Viscosity'}, inplace=True)
+        st.markdown('**1.1 Showing dataset**')
+        st.write(df)
+        model(df)
