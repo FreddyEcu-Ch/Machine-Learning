@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
+import folium
+from streamlit_folium import folium_static
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler, LabelEncoder, OneHotEncoder
@@ -32,7 +34,8 @@ combustion in situ method.
 
 * **By:** [Freddy Carrion](https://www.linkedin.com/in/freddy-carri%C3%B3n-maldonado-b3579b125/)
 
-* **Python Libraries:** scikit-learn, pandas, numpy, streamlit, matplotlib, pandas_profiling
+* **Python Libraries:** scikit-learn, pandas, numpy, streamlit, matplotlib, 
+pandas_profiling
 """)
 
 # Sidebar - collects user input features into dataframe
@@ -44,7 +47,8 @@ with st.sidebar.header("1. Upload the csv data"):
 
 # Sidebar - ML Algorithms
 with st.sidebar.subheader("2. Select ML Algorithm"):
-    algorithm = st.sidebar.selectbox("Select algorithm", ("K Nearest Neighbors(KNN)", "Decision Tree"))
+    algorithm = st.sidebar.selectbox("Select algorithm", ("K Nearest Neighbors(KNN)",
+                                                          "Decision Tree"))
 
 # Setting parameters
 with st.sidebar.subheader("3. Set User Input Parameters"):
@@ -83,6 +87,23 @@ if st.button('Press to See the Exploratory Data Analysis (EDA)'):
         st.write('---')
         st.markdown('**Pandas Profiling Report**')
         st_profile_report(report)
+
+    st.write('---')
+    st.header('**Geospatial Data**')
+
+    # Load the coordinates of the countries where the EOR projects of this dataset are
+    coordinates = {"Norway": ([64.5783, 17.8882], 5), "Canada": ([56.130366, -106.346771], 38),
+                   "Usa": ([37.09024, -95.712891], 140), "Brazil": ([-23.533773, -46.625290], 8),
+                   "Egypt": ([26.820553, 30.802498], 1), "Germany": ([51.5167, 9.9167], 10)}
+
+    with st.echo():
+        # Load the world map
+        m = folium.Map(zoom_start=14)
+        # Load the markers and popups
+        for country, point in coordinates.items():
+            folium.Marker(point[0], popup="<b>{}: </b> {} EOR Projects".
+                          format(country, point[1])).add_to(m)
+        folium_static(m)
 
 # Calling data processing modules
 sc = MinMaxScaler()
@@ -128,7 +149,7 @@ def model(dataframe):
     my_X = pd.DataFrame(data=data, columns=cnames)
     my_X = sc.transform(my_X)
 
-    # Calling the ML algorithms for training, plots, and prediction
+    # Calling the ML algorithms for their training, plottings, and predictions
     if algorithm == "K Nearest Neighbors(KNN)":
         Knn = KNeighborsClassifier(n_neighbors=parameter_k_neighbors)
         Knn.fit(X_train, Y_train)
@@ -201,6 +222,8 @@ def model(dataframe):
         st.info('Steam Injection')
 
 # Model Deployment
+
+
 if upload_file is not None:
     st.subheader('1. Dataset')
     df = pd.read_csv(upload_file)
