@@ -16,12 +16,27 @@ from sklearn.tree import DecisionTreeClassifier
 # Page expands to full width
 st.set_page_config(page_title="EOR_Ml App")
 
+# CSS codes to improve the design of the web app
+st.markdown("""
+<style>
+h1 {text-align: center;
+    background-color: white;
+}
+body {background-color: #DCE3D5;
+      width: 1200px;
+      margin: 15px auto;
+}
+</style>""", unsafe_allow_html=True)
+
 # Insert image
 image = Image.open("dt_og.jpg")
 st.image(image, width=100, use_column_width=True, caption='Dassault Systemes. (2020, July). Oil & Gas Digital Transformation')
 
 # Write title and additional information
 st.title("Welcome to Data Science & ML for Oil and Gas Engineering")
+
+st.write('---')
+
 st.markdown("""
 This App consists of implementing an **EOR Screening** for any well by using Machine 
 Learning algorithms. 
@@ -100,9 +115,12 @@ if st.button('Press to See the Exploratory Data Analysis (EDA)'):
     st.header('**Geospatial Data**')
 
     # Load the coordinates of the countries where the EOR projects of this dataset are
-    coordinates = {"Norway": ([64.5783, 17.8882], 5), "Canada": ([56.130366, -106.346771], 38),
-                   "Usa": ([37.09024, -95.712891], 140), "Brazil": ([-23.533773, -46.625290], 8),
-                   "Egypt": ([26.820553, 30.802498], 1), "Germany": ([51.5167, 9.9167], 10)}
+    coordinates = {"Norway": ([64.5783, 17.8882], 5),
+                   "Canada": ([56.130366, -106.346771], 38),
+                   "Usa": ([37.09024, -95.712891], 140),
+                   "Brazil": ([-23.533773, -46.625290], 8),
+                   "Egypt": ([26.820553, 30.802498], 1),
+                   "Germany": ([51.5167, 9.9167], 10)}
     # Load the world map
     m = folium.Map(zoom_start=14)
     # Load the markers and popups
