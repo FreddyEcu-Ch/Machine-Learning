@@ -61,6 +61,16 @@ expander_bar.markdown("This project consists of implementing an EOR Screening by
                       "method, polymer injection method, and combustion in situ "
                       "method.")
 
+# Adding of a mp4 video
+st.markdown("""
+**The Phases of Oil Recovery**
+""")
+video = open("Oil Phases Recovery.mp4", "rb")
+st.video(video)
+st.markdown("<span style=“background-color:#121922”>", unsafe_allow_html=True)
+st.markdown("Energy & Environmental Research Center. (2014, April). The Phases of Oil Recovery")
+
+
 # Sidebar - collects user input features into dataframe
 with st.sidebar.header("1. Upload the csv data"):
     upload_file = st.sidebar.file_uploader("Upload your csv file", type=["csv"])
