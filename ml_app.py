@@ -181,7 +181,7 @@ def model(dataframe):
     y = ohe.fit_transform(y).toarray()
 
     # Data splitting
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=1 - split_size, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=split_size, random_state=0)
 
     # Calling the information that will be used for model prediction
     cnames = ['Porosity', 'Permeability', 'Depth', 'Gravity', 'Viscosity',
