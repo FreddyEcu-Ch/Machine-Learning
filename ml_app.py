@@ -12,7 +12,7 @@ from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
-sns.set_style('darkgrid')
+#sns.set_style('darkgrid')
 
 # Page Layout
 # Page expands to full width
@@ -155,7 +155,6 @@ ohe = OneHotEncoder()
 
 # Model Building
 
-@st.cache
 def model(dataframe):
     # Calling the independent and dependent variables
     X = dataframe.iloc[:, 2:9]
