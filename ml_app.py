@@ -22,7 +22,6 @@ st.set_page_config(page_title="EOR_Ml App")
 st.markdown("""
 <style>
 h1 {text-align: center;
-    background-color: white;
 }
 body {background-color: #DCE3D5;
       width: 1400px;
