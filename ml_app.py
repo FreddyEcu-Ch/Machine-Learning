@@ -180,7 +180,7 @@ def model(dataframe):
     Y = ohe.fit_transform(Y).toarray()
 
     # Data splitting
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=split_size,
+    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=split_size,
                                                         random_state=0)
 
     # Calling the information that will be used for model prediction
@@ -194,45 +194,53 @@ def model(dataframe):
     # Calling the ML algorithms for their training, plottings, and predictions
     if algorithm == "K Nearest Neighbors(KNN)":
         Knn = KNeighborsClassifier(n_neighbors=parameter_k_neighbors)
-        Knn.fit(X_train, Y_train)
-        training_score = Knn.score(X_train, Y_train)
-        test_score = Knn.score(X_test, Y_test)
+        Knn.fit(X_train, y_train)
+        training_score = Knn.score(X_train, y_train)
+        test_score = Knn.score(X_test, y_test)
 
+        # Plot of Accuracy vs K values using the training and testing data
+        fig, ax = plt.subplots(figsize=(15, 8))
         neighbors = np.arange(1, 30)
         train_accuracy = np.empty(len(neighbors))
         test_accuracy = np.empty(len(neighbors))
         for i, k in enumerate(neighbors):
             knn = KNeighborsClassifier(n_neighbors=k)
-            knn.fit(X_train, Y_train)
-            train_accuracy[i] = knn.score(X_train, Y_train)
-            test_accuracy[i] = knn.score(X_test, Y_test)
-        plt.plot(neighbors, test_accuracy, label='Test')
-        plt.plot(neighbors, train_accuracy, label='Training')
-        plt.legend()
-        plt.xlabel('K_neighbors')
-        plt.ylabel('Accuracy')
+            knn.fit(X_train, y_train)
+            train_accuracy[i] = knn.score(X_train, y_train)
+            test_accuracy[i] = knn.score(X_test, y_test)
+        ax.plot(neighbors, test_accuracy, label='Test')
+        ax.plot(neighbors, train_accuracy, label='Train')
+        plt.legend(fontsize=12)
+        ax.set_xlabel('K neighbors', size=14)
+        ax.set_ylabel('Accuracy', size=14)
+        ax.set_title('Accuracy Vs K neighbors', fontname="Times New Roman", size=16, fontweight='bold')
+        plt.show()
 
         prediction = Knn.predict(my_X)
 
     else:
         tree = DecisionTreeClassifier(max_depth=parameter_decision_tree)
-        tree.fit(X_train, Y_train)
-        training_score = tree.score(X_train, Y_train)
-        test_score = tree.score(X_test, Y_test)
+        tree.fit(X_train, y_train)
+        training_score = tree.score(X_train, y_train)
+        test_score = tree.score(X_test, y_test)
 
+        # Plot of Accuracy vs max depth values using the training and testing data
+        fig, ax = plt.subplots(figsize=(15, 8))
         max_depth = np.arange(1, 9)
         train_accuracy = np.empty(len(max_depth))
         test_accuracy = np.empty(len(max_depth))
         for i, r in enumerate(max_depth):
             Tree = DecisionTreeClassifier(max_depth=r)
-            Tree.fit(X_train, Y_train)
-            train_accuracy[i] = Tree.score(X_train, Y_train)
-            test_accuracy[i] = Tree.score(X_test, Y_test)
-        plt.plot(max_depth, test_accuracy, label='Test')
-        plt.plot(max_depth, train_accuracy, label='Train')
-        plt.legend()
-        plt.xlabel('max_depth_values')
-        plt.ylabel('Accuracy')
+            Tree.fit(X_train, y_train)
+            train_accuracy[i] = Tree.score(X_train, y_train)
+            test_accuracy[i] = Tree.score(X_test, y_test)
+        ax.plot(max_depth, test_accuracy, label='Test')
+        ax.plot(max_depth, train_accuracy, label='Train')
+        plt.legend(fontsize=12)
+        ax.set_xlabel('Max depth', size=14)
+        ax.set_ylabel('Accuracy', size=14)
+        ax.set_title('Accuracy Vs Max depth', fontname="Times New Roman", size=16, fontweight='bold')
+        plt.show()
 
         prediction = tree.predict(my_X)
 
