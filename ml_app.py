@@ -155,7 +155,7 @@ ohe = OneHotEncoder()
 
 # Model Building
 
-
+@st.cache
 def model(dataframe):
     # Calling the independent and dependent variables
     X = dataframe.iloc[:, 2:9]
