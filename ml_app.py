@@ -41,7 +41,6 @@ st.markdown("""
 video_app = open("app_explain.mp4", "rb")
 st.video(video_app)
 st.markdown("<span style=“background-color:#121922”>", unsafe_allow_html=True)
-#st.markdown("Energy & Environmental Research Center. (2014, April). The Phases of Oil Recovery")
 
 # Write title and additional information
 st.title("Welcome to Data Science & ML for Oil and Gas Engineering")
@@ -104,7 +103,7 @@ with st.sidebar.subheader("3.2 Learning parameters"):
         parameter_k_neighbors = st.sidebar.slider("Number of K neighbors", 1, 30, 2)
 
     else:
-        parameter_decision_tree = st.sidebar.slider("Number of max depth", 1,10, 3)
+        parameter_decision_tree = st.sidebar.slider("Number of max depth", 1, 10, 3)
 
 with st.sidebar.subheader("3.3 Reservoir Parameters"):
     Porosity = st.sidebar.slider("Porosity (%)", 2, 30)
@@ -113,7 +112,7 @@ with st.sidebar.subheader("3.3 Reservoir Parameters"):
     Gravity = st.sidebar.slider("API Gravity", 5, 40, 8)
     Viscosity = st.sidebar.slider("Oil Viscosity (cp)", 10, 500000, 490058)
     Temperature = st.sidebar.slider("Reservoir Temperature (F)", 50, 300)
-    Oil_saturation = st.sidebar.slider("Oil Saturation (%)", 10, 80, 35)
+    Oil_saturation = st.sidebar.slider("Oil Saturation (%)", 10, 80, 35.4)
 
 # Exploratory Data Analysis (EDA)
 if st.button('Press to See the Exploratory Data Analysis (EDA)'):
@@ -160,29 +159,29 @@ ohe = OneHotEncoder()
 def model(dataframe):
     # Calling the independent and dependent variables
     X = dataframe.iloc[:, 2:9]
-    Y = dataframe.iloc[:, 1:2]
+    y = dataframe.iloc[:, 1:2]
 
     # Data details
     st.markdown('**1.2. Data Split**')
     st.write('Training set')
     st.info(X.shape)
-    st.info(Y.shape)
+    st.info(y.shape)
 
     # Variable information
     st.markdown('**1.3. Variable details**')
     st.write('Independent Variables')
     st.info(list(X.columns))
     st.write('Dependent Variable')
-    st.info(list(Y.columns))
+    st.info(list(y.columns))
 
     # data processing step
     X = sc.fit_transform(X)
     dfle = dataframe
     dfle.EOR_Method = le.fit_transform(dfle.EOR_Method)
-    Y = ohe.fit_transform(Y).toarray()
+    y = ohe.fit_transform(y).toarray()
 
     # Data splitting
-    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=split_size,
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=split_size,
                                                         random_state=0)
 
     # Calling the information that will be used for model prediction
