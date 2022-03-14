@@ -144,8 +144,7 @@ if st.button('Press to See the Exploratory Data Analysis (EDA)'):
     m = folium.Map(zoom_start=14)
     # Load the markers and popups
     for country, point in coordinates.items():
-        folium.Marker(point[0], popup="<b>{}: </b> {} EOR Projects".
-                              format(country, point[1])).add_to(m)
+        folium.Marker(point[0], popup="<b>{}: </b> {} EOR Projects".format(country, point[1])).add_to(m)
     folium_static(m)
 
 # Calling data processing modules
