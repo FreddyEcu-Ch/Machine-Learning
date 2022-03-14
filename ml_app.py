@@ -173,7 +173,7 @@ def model(dataframe):
     st.write('Independent Variables')
     st.info(list(X.columns))
     st.write('Dependent Variable')
-    st.info(list(Y.columns[0]))
+    st.info(list(Y.columns))
 
     # data processing step
     X = sc.fit_transform(X)
