@@ -23,7 +23,7 @@ h1 {text-align: center;
     background-color: white;
 }
 body {background-color: #DCE3D5;
-      width: 1200px;
+      width: 1400px;
       margin: 15px auto;
 }
 </style>""", unsafe_allow_html=True)
