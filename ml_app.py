@@ -5,12 +5,14 @@ from PIL import Image
 import folium
 from streamlit_folium import folium_static
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler, LabelEncoder, OneHotEncoder
 from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
+sns.set_style('darkgrid')
 
 # Page Layout
 # Page expands to full width
