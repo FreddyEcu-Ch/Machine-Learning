@@ -28,6 +28,10 @@ body {background-color: #DCE3D5;
 }
 </style>""", unsafe_allow_html=True)
 
+# Insert image
+logo = Image.open("Tyrmes Logo.png")
+st.image(logo, width=100, use_column_width=True, caption='Dassault Systemes. (2020, July). Oil & Gas Digital Transformation')
+
 # Adding of a mp4 video
 st.markdown("""
 **Demo users video**
@@ -36,10 +40,6 @@ video_app = open("app_explain.mp4", "rb")
 st.video(video_app)
 st.markdown("<span style=“background-color:#121922”>", unsafe_allow_html=True)
 #st.markdown("Energy & Environmental Research Center. (2014, April). The Phases of Oil Recovery")
-
-# Insert image
-#image = Image.open("dt_og.jpg")
-#st.image(image, width=100, use_column_width=True, caption='Dassault Systemes. (2020, July). Oil & Gas Digital Transformation')
 
 # Write title and additional information
 st.title("Welcome to Data Science & ML for Oil and Gas Engineering")
