@@ -158,7 +158,7 @@ ohe = OneHotEncoder()
 
 def model(dataframe):
     # Calling the independent and dependent variables
-    X = dataframe.iloc[:, 2:9].values
+    X = dataframe.iloc[:, 2:9]
     y = dataframe.iloc[:, 1:2]
 
     # Data details
@@ -170,7 +170,7 @@ def model(dataframe):
     # Variable information
     st.markdown('**1.3. Variable details**')
     st.write('Independent Variables')
-    st.info(list(X))
+    st.info(list(X.columns))
     st.write('Dependent Variable')
     st.info(list(y.columns))
 
