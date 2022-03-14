@@ -112,7 +112,7 @@ with st.sidebar.subheader("3.3 Reservoir Parameters"):
     Gravity = st.sidebar.slider("API Gravity", 5, 40, 8)
     Viscosity = st.sidebar.slider("Oil Viscosity (cp)", 10, 500000, 490058)
     Temperature = st.sidebar.slider("Reservoir Temperature (F)", 50, 300)
-    Oil_saturation = st.sidebar.slider("Oil Saturation (%)", 10, 80, 35.4)
+    Oil_saturation = st.sidebar.slider("Oil Saturation (%)", 10, 80, 35)
 
 # Exploratory Data Analysis (EDA)
 if st.button('Press to See the Exploratory Data Analysis (EDA)'):
