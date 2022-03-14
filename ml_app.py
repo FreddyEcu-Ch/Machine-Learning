@@ -170,7 +170,7 @@ def model(dataframe):
     # Variable information
     st.markdown('**1.3. Variable details**')
     st.write('Independent Variables')
-    st.info(list(X.columns))
+    st.info(list(X))
     st.write('Dependent Variable')
     st.info(list(y.columns))
 
