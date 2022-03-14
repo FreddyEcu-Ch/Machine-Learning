@@ -58,7 +58,7 @@ pillow, streamlit_folium, pandas_profiling, streamlit-pandas-profiling
 """)
 
 # Fill in information about the project implemented in this app
-expander_bar = st.beta_expander("About")
+expander_bar = st.expander("About")
 expander_bar.markdown("This project consists of implementing an EOR Screening by using "
                       "Machine Learning algorithms. It must be mentioned that the "
                       "dataset used for training and evaluating these algorithms have a"
