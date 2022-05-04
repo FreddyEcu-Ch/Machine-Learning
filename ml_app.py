@@ -105,7 +105,7 @@ with st.sidebar.header("1. Upload the csv data"):
 # Sidebar - ML Algorithms
 with st.sidebar.subheader("2. Select ML Algorithm"):
     algorithm = st.sidebar.selectbox(
-        "Select algorithm", ("K Nearest Neighbors(KNN)", "Decision Tree")
+        "Select algorithm", ("K Nearest Neighbors(knn)", "Decision tree")
     )
 
 # Setting parameters
@@ -114,7 +114,7 @@ with st.sidebar.subheader("3.1 Data Split"):
     split_size = st.sidebar.slider("Data split ratio (% for training set)", 10, 90, 80)
 
 with st.sidebar.subheader("3.2 Learning parameters"):
-    if algorithm == "K Nearest Neighbors(KNN)":
+    if algorithm == "K Nearest Neighbors(knn)":
         parameter_k_neighbors = st.sidebar.slider("Number of K neighbors", 1, 30, 2)
 
     else:
@@ -179,31 +179,31 @@ ohe = OneHotEncoder()
 
 def model(dataframe):
     # Calling the independent and dependent variables
-    X = dataframe.iloc[:, 2:9]
+    x = dataframe.iloc[:, 2:9]
     y = dataframe.iloc[:, 1:2]
 
     # Data details
     st.markdown("**1.2. Data Split**")
     st.write("Training set")
-    st.info(X.shape)
+    st.info(x.shape)
     st.info(y.shape)
 
     # Variable information
     st.markdown("**1.3. Variable details**")
     st.write("Independent Variables")
-    st.info(list(X.columns))
+    st.info(list(x.columns))
     st.write("Dependent Variable")
     st.info(list(y.columns))
 
     # data processing step
-    X = sc.fit_transform(X)
+    x = sc.fit_transform(x)
     dfle = dataframe
     dfle.EOR_Method = le.fit_transform(dfle.EOR_Method)
     y = ohe.fit_transform(y).toarray()
 
     # Data splitting
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, train_size=split_size, random_state=0
+    x_train, x_test, y_train, y_test = train_test_split(
+        x, y, train_size=split_size, random_state=0
     )
 
     # Calling the information that will be used for model prediction
@@ -219,15 +219,15 @@ def model(dataframe):
     data = [
         [Porosity, Permeability, Depth, Gravity, Viscosity, Temperature, Oil_saturation]
     ]
-    my_X = pd.DataFrame(data=data, columns=cnames)
-    my_X = sc.transform(my_X)
+    my_x = pd.DataFrame(data=data, columns=cnames)
+    my_x = sc.transform(my_x)
 
     # Calling the ML algorithms for their training, plottings, and predictions
-    if algorithm == "K Nearest Neighbors(KNN)":
-        Knn = KNeighborsClassifier(n_neighbors=parameter_k_neighbors)
-        Knn.fit(X_train, y_train)
-        training_score = Knn.score(X_train, y_train)
-        test_score = Knn.score(X_test, y_test)
+    if algorithm == "K Nearest Neighbors(knn)":
+        knn = KNeighborsClassifier(n_neighbors=parameter_k_neighbors)
+        knn.fit(x_train, y_train)
+        training_score = knn.score(x_train, y_train)
+        test_score = knn.score(x_test, y_test)
 
         # Plot of Accuracy vs K values using the training and testing data
         fig, ax = plt.subplots(figsize=(15, 8))
@@ -236,9 +236,9 @@ def model(dataframe):
         test_accuracy = np.empty(len(neighbors))
         for i, k in enumerate(neighbors):
             knn = KNeighborsClassifier(n_neighbors=k)
-            knn.fit(X_train, y_train)
-            train_accuracy[i] = knn.score(X_train, y_train)
-            test_accuracy[i] = knn.score(X_test, y_test)
+            knn.fit(x_train, y_train)
+            train_accuracy[i] = knn.score(x_train, y_train)
+            test_accuracy[i] = knn.score(x_test, y_test)
         ax.plot(neighbors, test_accuracy, label="Test")
         ax.plot(neighbors, train_accuracy, label="Train")
         plt.legend(fontsize=12)
@@ -252,13 +252,13 @@ def model(dataframe):
         )
         plt.show()
 
-        prediction = Knn.predict(my_X)
+        prediction = knn.predict(my_x)
 
     else:
         tree = DecisionTreeClassifier(max_depth=parameter_decision_tree)
-        tree.fit(X_train, y_train)
-        training_score = tree.score(X_train, y_train)
-        test_score = tree.score(X_test, y_test)
+        tree.fit(x_train, y_train)
+        training_score = tree.score(x_train, y_train)
+        test_score = tree.score(x_test, y_test)
 
         # Plot of Accuracy vs max depth values using the training and testing data
         fig, ax = plt.subplots(figsize=(15, 8))
@@ -266,10 +266,10 @@ def model(dataframe):
         train_accuracy = np.empty(len(max_depth))
         test_accuracy = np.empty(len(max_depth))
         for i, r in enumerate(max_depth):
-            Tree = DecisionTreeClassifier(max_depth=r)
-            Tree.fit(X_train, y_train)
-            train_accuracy[i] = Tree.score(X_train, y_train)
-            test_accuracy[i] = Tree.score(X_test, y_test)
+            tree = DecisionTreeClassifier(max_depth=r)
+            tree.fit(x_train, y_train)
+            train_accuracy[i] = tree.score(x_train, y_train)
+            test_accuracy[i] = tree.score(x_test, y_test)
         ax.plot(max_depth, test_accuracy, label="Test")
         ax.plot(max_depth, train_accuracy, label="Train")
         plt.legend(fontsize=12)
@@ -283,7 +283,7 @@ def model(dataframe):
         )
         plt.show()
 
-        prediction = tree.predict(my_X)
+        prediction = tree.predict(my_x)
 
     # Model performance information
     st.subheader("2. Model Performance")
