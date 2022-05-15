@@ -14,7 +14,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 # sns.set_style('darkgrid')
 
-# Page Layout
+#  Page Layout
 # Page expands to full width
 st.set_page_config(page_title="EOR_Ml App")
 
