@@ -141,7 +141,7 @@ if st.button("Press to See the Exploratory Data Analysis (EDA)"):
             return data
 
         df = load_csv()
-        report = ProfileReport(df, explorative=True)
+        #report = ProfileReport(df, explorative=True)
         st.markdown("**Input Dataframe**")
         st.write(df)
         st.write("---")
