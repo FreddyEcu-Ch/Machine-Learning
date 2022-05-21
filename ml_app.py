@@ -7,8 +7,7 @@ from streamlit_folium import folium_static
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler, LabelEncoder, OneHotEncoder
-from pandas_profiling import ProfileReport
-from markupsafe import escape
+import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -142,7 +141,7 @@ if st.button("Press to See the Exploratory Data Analysis (EDA)"):
             return data
 
         df = load_csv()
-        report = ProfileReport(df, explorative=True)
+        report = df.profile_report()
         st.markdown("**Input Dataframe**")
         st.write(df)
         st.write("---")
