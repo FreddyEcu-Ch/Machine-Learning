@@ -141,12 +141,12 @@ if st.button("Press to See the Exploratory Data Analysis (EDA)"):
             return data
 
         df = load_csv()
-        #report = ProfileReport(df, explorative=True)
+        report = df.profile_report()
         st.markdown("**Input Dataframe**")
         st.write(df)
         st.write("---")
         st.markdown("**EDA Report**")
-        #st_profile_report(report)
+        st_profile_report(report)
 
     st.write("---")
     st.header("**Geospatial Data**")
