@@ -16,7 +16,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 #  Page Layout
 # Page expands to full width
-st.set_page_config(page_title="EOR Ml App", page_icon='🛢')
+st.set_page_config(page_title="EOR ML App", page_icon='🛢')
 
 # CSS codes to improve the design of the web app
 st.markdown(
