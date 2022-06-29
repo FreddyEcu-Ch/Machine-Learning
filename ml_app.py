@@ -146,7 +146,7 @@ if st.button("Press to See the Exploratory Data Analysis (EDA)"):
         st.write(df)
         st.write("---")
         st.markdown("**EDA Report**")
-        #st_profile_report(report)
+        st_profile_report(df)
 
     st.write("---")
     st.header("**Geospatial Data**")
