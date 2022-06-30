@@ -7,7 +7,7 @@ from streamlit_folium import folium_static
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler, LabelEncoder, OneHotEncoder
-#from pandas_profiling import ProfileReport
+from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -15,7 +15,7 @@ from sklearn.tree import DecisionTreeClassifier
 # sns.set_style('darkgrid')
 
 # Insert icon of web app
-icon = Image.open('uiir.png')
+icon = Image.open("uiir.png")
 #  Page Layout
 st.set_page_config(page_title="EOR ML App", page_icon=icon)
 
@@ -95,10 +95,10 @@ st.markdown(
 
 
 # Insert image into left side section
-img = Image.open('uiir.png')
+img = Image.open("uiir.png")
 st.sidebar.image(img)
 # Sidebar - collects user input features into dataframe
-with st.sidebar.header("1. Upload the csv data"):
+with st.sidebar.header(":file_folder: 1. Upload the csv data"):
     upload_file = st.sidebar.file_uploader("Upload your csv file", type=["csv"])
     st.sidebar.markdown(
         """
@@ -107,15 +107,17 @@ with st.sidebar.header("1. Upload the csv data"):
     )
 
 # Sidebar - ML Algorithms
-with st.sidebar.subheader("2. Select ML Algorithm"):
+with st.sidebar.subheader(":arrow_down_small: 2. Select ML Algorithm"):
     algorithm = st.sidebar.selectbox(
         "Select algorithm", ("K Nearest Neighbors(knn)", "Decision tree")
     )
 
 # Setting parameters
-st.sidebar.subheader("3. Set User Input Parameters")
+st.sidebar.subheader(":white_check_mark: 3. Set User Input Parameters")
 with st.sidebar.subheader("3.1 Data Split"):
-    split_size = st.sidebar.selectbox("Data split ratio (% for training set)", np.arange(10, 91, 10))
+    split_size = st.sidebar.selectbox(
+        "Data split ratio (% for training set)", np.arange(10, 91, 10)
+    )
 
 with st.sidebar.subheader("3.2 Learning parameters"):
     if algorithm == "K Nearest Neighbors(knn)":
@@ -145,12 +147,12 @@ if st.button("Press to See the Exploratory Data Analysis (EDA)"):
             return data
 
         df = load_csv()
-        #pr = ProfileReport(df)
+        # pr = ProfileReport(df)
         st.markdown("**Input Dataframe**")
         st.write(df)
         st.write("---")
-        #st.markdown("**EDA Report**")
-        #st_profile_report(pr)
+        # st.markdown("**EDA Report**")
+        # st_profile_report(pr)
 
     st.write("---")
     st.header("**Geospatial Data**")
