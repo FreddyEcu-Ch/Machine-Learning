@@ -15,7 +15,7 @@ from sklearn.tree import DecisionTreeClassifier
 # sns.set_style('darkgrid')
 
 # Insert icon of web app
-icon = Image.open('uirr.png')
+icon = Image.open('uiir.png')
 #  Page Layout
 st.set_page_config(page_title="EOR ML App", page_icon=icon)
 
