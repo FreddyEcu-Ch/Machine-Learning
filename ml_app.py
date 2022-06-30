@@ -48,7 +48,7 @@ st.video(video_app)
 st.markdown("<span style=“background-color:#121922”>", unsafe_allow_html=True)
 
 # Write title and additional information
-st.title("Welcome to Data Science & ML for Oil and Gas Engineering")
+st.title("Welcome to Data Science & ML for Oil and Gas Engineering :link:")
 
 st.write("---")
 
