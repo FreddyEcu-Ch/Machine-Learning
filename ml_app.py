@@ -112,7 +112,7 @@ with st.sidebar.subheader("2. Select ML Algorithm"):
 # Setting parameters
 st.sidebar.subheader("3. Set User Input Parameters")
 with st.sidebar.subheader("3.1 Data Split"):
-    split_size = st.sidebar.slider("Data split ratio (% for training set)", 10, 90, 80)
+    split_size = st.sidebar.selectbox("Data split ratio (% for training set)", np.arange(10, 91, 10))
 
 with st.sidebar.subheader("3.2 Learning parameters"):
     if algorithm == "K Nearest Neighbors(knn)":
