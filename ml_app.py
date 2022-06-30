@@ -14,9 +14,10 @@ from sklearn.tree import DecisionTreeClassifier
 
 # sns.set_style('darkgrid')
 
+# Insert icon of web app
+icon = Image.open('uirr.png')
 #  Page Layout
-# Page expands to full width
-st.set_page_config(page_title="EOR ML App", page_icon='🛢')
+st.set_page_config(page_title="EOR ML App", page_icon=icon)
 
 # CSS codes to improve the design of the web app
 st.markdown(
