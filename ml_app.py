@@ -94,6 +94,9 @@ st.markdown(
 )
 
 
+# Insert image into left side section
+img = Image.open('uiir.png')
+st.sidebar.image(img)
 # Sidebar - collects user input features into dataframe
 with st.sidebar.header("1. Upload the csv data"):
     upload_file = st.sidebar.file_uploader("Upload your csv file", type=["csv"])
