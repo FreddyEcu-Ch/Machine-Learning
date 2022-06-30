@@ -121,10 +121,14 @@ with st.sidebar.subheader("3.1 Data Split"):
 
 with st.sidebar.subheader("3.2 Learning parameters"):
     if algorithm == "K Nearest Neighbors(knn)":
-        parameter_k_neighbors = st.sidebar.slider("Number of K neighbors", 1, 30, 2)
+        parameter_k_neighbors = st.sidebar.number_input(
+            "Number of K neighbors", 1, 30, 2
+        )
 
     else:
-        parameter_decision_tree = st.sidebar.slider("Number of max depth", 1, 10, 3)
+        parameter_decision_tree = st.sidebar.number_input(
+            "Number of max depth", 1, 10, 3
+        )
 
 with st.sidebar.subheader("3.3 Reservoir Parameters"):
     Porosity = st.sidebar.slider("Porosity (%)", 2, 30)
