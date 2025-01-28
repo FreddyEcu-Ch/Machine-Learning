@@ -35,7 +35,7 @@ body {background-color: #DCE3D5;
 
 # Insert image
 logo = Image.open("Tyrmes Logo.png")
-st.image(logo, width=100, use_column_width=True)
+st.image(logo, width=100, use_container_width=True)
 
 # Adding of a mp4 video
 st.markdown(
